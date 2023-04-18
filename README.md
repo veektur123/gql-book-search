@@ -7,10 +7,6 @@
 
 [Usage Instructions](#usage-instructions)
 
-[Test Instructions](#test-instructions)
-
-[Contribution Guidelines](#contribution-guidelines)
-
 [Contact Information](#contact-information)
 
 
@@ -25,12 +21,6 @@ Npm i
 
 ### Usage Instructions
 To provide users with a way to search for books and save them for later
-
-### Contribution Guidelines
-N/A
-
-### Test Instructions
-N/A
 
 ### Contact Information
 Github : [veektur123](https://github.com/veektur123/)
