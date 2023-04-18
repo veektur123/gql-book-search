@@ -26,7 +26,7 @@ const typeDefs = gql`
     username: String
     email: String
     savedBooks: [Book]
-    bookCount: number
+    bookCount: Int
   }
 
   type Auth {
