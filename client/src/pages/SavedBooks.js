@@ -20,7 +20,7 @@ const SavedBooks = () => {
 
   if (error) return `Error! ${error.message}`;
 
-  setUserData(data)
+  setUserData(data.me)
 
   // create function that accepts the book's mongo _id value as param and deletes the book from the database
   const handleDeleteBook = async (bookId) => {
@@ -34,7 +34,7 @@ const SavedBooks = () => {
       if (!data) {
         throw new Error('something went wrong!');
       }
-      setUserData(data);
+      setUserData(data.removeBook);
       // upon success, remove book's id from localStorage
       removeBookId(bookId);
     } catch (err) {
