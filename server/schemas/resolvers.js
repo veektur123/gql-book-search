@@ -11,7 +11,7 @@ const resolvers = {
     addUser: async (parent, arguments) => {
       const user = await User.create(arguments);
       const jwt = signToken(user);
-      return jwt;
+      return {token: jwt, user};
     },
     login: async (parent, { password, email }) => {
       const user = await User.findOne({ email: email} );
@@ -19,14 +19,14 @@ const resolvers = {
       return console.log(`Unable to find user with email ${email}` );
     }
     
-    const correctPw = await user.isCorrectPassword(password);
+    const isValidPassword = await user.isCorrectPassword(password);
 
-    if (!correctPw) {
+    if (!isValidPassword) {
       return console.log('Password is incorrect');
     }
     const jwt = signToken(user);
     
-    return jwt;
+    return {token: jwt, user};
 
     },
     removeBook: async (parent, {_id, bookId}) => {
